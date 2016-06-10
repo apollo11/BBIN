@@ -1,0 +1,52 @@
+<div ng-controller="LoginController">
+    <nav style="position: fixed; top: 0; padding-right: 10px; z-index: 2;">
+        <div class="nav-wrapper fixed" ng-if="emptyCookie()">
+            <ul class="right hide-on-med-and-down">
+                <form name="loginMember" class="my-form" novalidate/>
+                <li><a ui-sref="createmember">Create Account</a></li>
+                <li>
+                    Username <input type="text" name="username" ng-model="login.username"
+                                    placeholder="Member ID(Please enter 4-20 characters with only alphabets and numeric combinations.)" required/>
+                </li>
+                <li>
+                    Password <input type="password" name="password" ng-model="login.password"
+                                    placeholder="Password(Must be 6~12 characters of English or Numbers. (0~9 & a~z))" required/>
+                </li>
+                <li>
+                    <button class="waves-effect waves-light btn" ng-disabled="loginMember.$invalid" type="submit" ng-click="loginAccount()" class="button radius">LOGIN
+                    </button>
+                </li>
+                </form>
+            </ul>
+        </div>
+        <div class="nav-wrapper fixed" ng-if="notEmptyCookie()">
+            <ul class="right hide-on-med-and-down">
+                <li><a ui-sref="betrecord">Bet Record</a></li>
+                <li><a ui-sref="checktransfer">Check Transfer</a></li>
+                <li><a ui-sref="transfer">Transfer</a></li>
+                <li><a ui-sref="checkbalance">Check Balance</a></li>
+                <li>Hi {{getCookie}}</li>
+                <li>
+                    <button class="waves-effect waves-light btn" ng-click="logoutAccount()" class="button radius">LOGOUT
+                    </button>
+                </li>
+             </ul>
+        </div>
+    </nav>
+    <!--<form name="loginMember" class="my-form" novalidate/>-->
+    <!--Website   <input type="text" name="website" ng-model="login.website" />-->
+    <!--Username <input type="text" name="username" ng-model="login.username"-->
+                    <!--placeholder="Member ID(Please enter 4-20 characters with only alphabets and numeric combinations.)"/>-->
+    <!--Password <input type="password" name="password" ng-model="login.password"-->
+                    <!--placeholder="Password(Must be 6~12 characters of English or Numbers. (0~9 & a~z))"/>-->
+    <!--Uppername <input type="text" name="uppername" ng-model="login.uppername" />-->
+    <!--Key       <input type="text" name="key" ng-model="saveM.key" />-->
+    <!--<button ng-disabled="loginMember.$invalid" type="submit" ng-click="loginAccount()" class="button radius">LOGIN-->
+    <!--</button>-->
+    <!--</form>-->
+    <!--<pre>-->
+        <!--{{result | json}}-->
+    <!--</pre>-->
+
+
+</div>

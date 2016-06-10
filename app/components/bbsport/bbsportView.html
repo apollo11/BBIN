@@ -1,0 +1,27 @@
+<div ng-controller="BBsportGamesController">
+<div class="container">
+    <div class="row">
+        <div class="game-bbsport">
+            <h1>{{title}}</h1>
+            <nav>
+                <div class="nav-wrapper">
+                    <ul class="left hide-on-med-and-down">
+                        <li class="bold"><a ui-sref="bbsport" class="waves-effect waves-teal">BB Sport</a></li>
+                        <li class="bold"><a ui-sref="casinogames" class="waves-effect waves-teal">Casino Games</a></li>
+                        <li class="bold"><a ui-sref="livegames" class="waves-effect waves-teal">Live Games</a></li>
+                        <li class="bold"><a ui-sref="lottery" class="waves-effect waves-teal">Lottery Games</a></li>
+                        <li class="bold"><a ui-sref="3dhall" class="waves-effect waves-teal">3DHall Games</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul>
+                <li ng-repeat="data in result">
+                    <a ng-click="connectGames(data.game_code)" class="button radius">{{data.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>

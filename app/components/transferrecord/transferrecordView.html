@@ -1,0 +1,19 @@
+<div ng-controller="TransferRecordController">
+    <div class="container">
+        <div class="row">
+            <div class="transfer-record">
+                <h1>{{title}}</h1>
+                <form name="transferR" class="my-form" novalidate/>
+                Website <input type="text" name="website" ng-model="record.website"/>
+                Username <input type="text" name="username" ng-model="record.username"/>
+                Uppername <input type="text" name="uppername" ng-model="record.uppername"/>
+                transid <input type="text" name="remitno" ng-model="record.transid"/>
+                Date Start <input type="text" name="remit" ng-model="record.start"/>
+                Date End <input type="text" name="action" ng-model="record.end"/>
+                <!--Key       <input type="text" name="key" ng-model="saveM.key" />-->
+                <button type="submit" ng-click="selectRecord()" class="button radius">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

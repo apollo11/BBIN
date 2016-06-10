@@ -1,0 +1,17 @@
+<div ng-controller="LogoutController">
+    <h1>{{title}}</h1>
+
+    <pre>
+        {{ logout | json}}
+    </pre>
+
+    <form name="logoutMember" class="my-form" novalidate />
+    Website   <input type="text" name="website" ng-model="logout.website" />
+    Username  <input type="text" name="username" ng-model="logout.username" placeholder="Member ID(Please enter 4-20 characters with only alphabets and numeric combinations.)" />
+    <button type="submit"  ng-click="logoutAccount()" class="button radius">SUBMIT</button>
+    </form>
+    <pre>
+        {{test | json}}
+    </pre>
+
+</div>

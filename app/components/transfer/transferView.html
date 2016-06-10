@@ -1,0 +1,15 @@
+<div ng-controller="TransferController">
+    <div class="container">
+        <div class="row">
+            <div class="transfer">
+                <h1>{{title}}</h1>
+                <form name="transfer" class="my-form" novalidate />
+                Remit No. <input type="text" name="remitno" ng-model="saveM.remitno" />
+                Remit     <input type="text" name="remit" ng-model="saveM.remit" />
+                Action    <input type="text" name="action" ng-model="saveM.action" />
+                <button type="submit"  ng-click="saveTransfer()" class="button radius">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

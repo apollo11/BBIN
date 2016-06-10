@@ -1,0 +1,16 @@
+<div ng-controller="CheckBalanceController">
+    <div class="check-balance">
+        <div class="container">
+            <div class="row">
+                <div class="balance">
+                    <h1>{{title}}</h1>
+                    <ul ng-repeat="balance in checkBalanceResult">
+                        <li>Balance: {{balance.Balance}}</li>
+                        <li>Currency: {{balance.Currency}}</li>
+                        <li>Total Balance: {{balance.TotalBalance}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

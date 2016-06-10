@@ -1,0 +1,22 @@
+<div ng-controller="CheckTransferController">
+    <div class="container">
+        <div class="row">
+            <div class="check-transfer">
+                <h1>{{title}}</h1>
+                <form name="transferList" class="my-form" novalidate/>
+                TransID <input type="text" name="transid" ng-model="transfer.transid">
+                <button type="submit" ng-disabled="transferList.$invalid" ng-click="selectTransfer()" class="button radius">
+                    SUBMIT
+                </button>
+                </form>
+                <ul>
+                    <li ng-repeat="data in  transferRecordResult">
+                        <p>{{data.TransID}} </p>
+                        <p>{{data.TransType}} </p>
+                        <p>{{data.Status}} </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

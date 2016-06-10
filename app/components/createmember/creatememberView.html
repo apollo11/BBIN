@@ -1,0 +1,18 @@
+<div ng-controller="CreateMemberController">
+    <div class="container">
+        <div class="row">
+            <div class="create-member">
+                <h1>{{title}}</h1>
+
+                <form name="createMember" class="my-form" novalidate/>
+                Username <input type="text" name="username" ng-model="create.username"
+                                placeholder="Member ID(Please enter 4-20 characters with only alphabets and numeric combinations.)"/>
+                Password <input type="password" name="password" ng-model="create.password"
+                                placeholder="Password(Must be 6~12 characters of English or Numbers. (0~9 & a~z))"/>
+                <!--Key       <input type="text" name="key" ng-model="saveM.key" />-->
+                <button type="submit" ng-click="saveAccount()" class="waves-effect waves-light btn">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
