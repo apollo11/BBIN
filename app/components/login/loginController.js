@@ -6,11 +6,10 @@ app.controller('LoginController',
     ['$scope'
         ,'Login'
         ,'Logout'
-        ,'WEBSITE'
-        ,'UPPERNAME'
+        ,'BASE'
         ,'$cookies'
         ,'$window'
-        , function($scope, Login, Logout, WEBSITE, UPPERNAME, $cookies, $window) {
+        , function($scope, Login, Logout, BASE, $cookies, $window) {
 
         $scope.title = 'Login';
 
@@ -22,10 +21,10 @@ app.controller('LoginController',
         $scope.getCookie = $cookies.get('username');
 
         $scope.loginAccount = function () {
-            $scope.LoginEncrypt = md5(WEBSITE + $scope.login.username + $scope.keyB + $scope.esdFormat);
+            $scope.LoginEncrypt = md5(BASE.WEBSITE + $scope.login.username + $scope.keyB + $scope.esdFormat);
             $scope.params = {
-                website: WEBSITE,
-                uppername: UPPERNAME,
+                website: BASE.WEBSITE,
+                uppername: BASE.UPPERNAME,
                 username: $scope.login.username,
                 password:$scope.login.password,
                 key:'12345678'+ $scope.LoginEncrypt +'12345678'
@@ -53,9 +52,9 @@ app.controller('LoginController',
 
         $scope.logoutAccount = function () {
             $scope.LoginKeyB = '0xUtO';
-            $scope.LogoutEncrypt = md5(WEBSITE + $scope.getCookie + $scope.LoginKeyB + $scope.esdFormat);
+            $scope.LogoutEncrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.LoginKeyB + $scope.esdFormat);
             $scope.params = {
-                website: WEBSITE,
+                website: BASE.WEBSITE,
                 username: $scope.getCookie,
                 key:'123456'+ $scope.LogoutEncrypt + '123'
             };

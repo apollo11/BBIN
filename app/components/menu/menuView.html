@@ -1,0 +1,16 @@
+<div ng-controller="MenuController">
+   <div class="container">
+       <div class="row">
+           <nav>
+               <div class="nav-wrapper">
+                   <ul class="left hide-on-med-and-down">
+                       <li  ng-repeat="data in result" class="bold">
+                           <a ui-sref="{{data.link}}" class="waves-effect waves-teal">{{data.title}}</a>
+                       </li>
+                   </ul>
+               </div>
+           </nav>
+       </div>
+   </div>
+    <!--{{result | json}}-->
+</div>

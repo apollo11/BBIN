@@ -3,8 +3,8 @@
  */
 
 'use strict';
-app.factory('LiveGames',['$resource','CMS_URL', function($resource, CMS_URL) {
-    var ENDPOINT = $resource(CMS_URL + 'api/v1/live', {},
+app.factory('LiveGames',['$resource','BASE', function($resource, BASE) {
+    var ENDPOINT = $resource(BASE.CMS + 'api/v1/live', {},
         {
             getLive: {
                 method:'GET'

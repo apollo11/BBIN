@@ -1,7 +1,7 @@
 'use strict';
 
-app.factory('Transfer', ['$resource', 'BASEURL', function($resource, BASEURL) {
-    var ENDPOINT = $resource(BASEURL + 'Transfer?website=:website&uppername=:uppername&username=:username&remitno=:remitno&action=:action&remit=:remit&key=:key',
+app.factory('Transfer', ['$resource', 'BASE', function($resource, BASE) {
+    var ENDPOINT = $resource(BASE.URL + 'Transfer?website=:website&uppername=:uppername&username=:username&remitno=:remitno&action=:action&remit=:remit&key=:key',
         {},
         {
             saveTrans: {

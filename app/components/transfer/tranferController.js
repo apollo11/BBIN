@@ -5,9 +5,8 @@
 app.controller('TransferController',
     ['$scope'
         ,'Transfer'
-        ,'WEBSITE'
-        ,'UPPERNAME'
-        ,'$cookies', function($scope, Transfer, WEBSITE, UPPERNAME, $cookies) {
+        ,'BASE'
+        ,'$cookies', function($scope, Transfer, BASE, $cookies) {
             $scope.title = 'Transfer';
             $scope.esdDate = moment();
             $scope.esdFormat = moment.tz($scope.esdDate, "America/New_York").format('YYYYMMDD');
@@ -18,10 +17,10 @@ app.controller('TransferController',
             $scope.testEncrypt = md5('orientaltestxyz45456nE47120160603');
 
         $scope.saveTransfer = function () {
-            $scope.encrypt = md5(WEBSITE + $scope.getCookie + $scope.saveM.remitno + $scope.keyB + $scope.esdFormat);
+            $scope.encrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.saveM.remitno + $scope.keyB + $scope.esdFormat);
             $scope.params = {
-                website: WEBSITE,
-                uppername: UPPERNAME,
+                website: BASE.WEBSITE,
+                uppername: BASE.UPPERNAME,
                 username: $scope.getCookie,
                 remitno: $scope.saveM.remitno,
                 remit: $scope.saveM.remit,

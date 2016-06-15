@@ -3,11 +3,12 @@
  */
 'use strict';
 app.controller('CheckBalanceController',
-    ['$scope'
-        ,'CheckBalance'
-        ,'WEBSITE'
-        ,'UPPERNAME'
-        ,'$cookies', function($scope, CheckBalance, WEBSITE, UPPERNAME, $cookies) {
+    [
+          '$scope'
+        , 'CheckBalance'
+        , 'BASE'
+        , '$cookies'
+        , function($scope, CheckBalance, BASE, $cookies) {
 
         $scope.title = 'Check Balance';
         $scope.esdDate = moment();
@@ -16,11 +17,11 @@ app.controller('CheckBalanceController',
         $scope.params = {};
         $scope.keyB = 'lNNzYZ5byA';
         $scope.getCookie = $cookies.get('username');
-        $scope.encrypt = md5(WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
+        $scope.encrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
 
         $scope.params = {
-            website: WEBSITE,
-            uppername: UPPERNAME,
+            website: BASE.WEBSITE,
+            uppername: BASE.UPPERNAME,
             username: $scope.getCookie,
             key: '12345' + $scope.encrypt + '12'
         };

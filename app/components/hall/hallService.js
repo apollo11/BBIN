@@ -3,8 +3,8 @@
  */
 
 'use strict';
-app.factory('HallService',['$resource','CMS_URL', function($resource, CMS_URL) {
-    var ENDPOINT = $resource(CMS_URL + 'api/v1/3dhall', {},
+app.factory('HallService',['$resource','BASE', function($resource, BASE) {
+    var ENDPOINT = $resource(BASE.CMS + 'api/v1/3dhall', {},
         {
             getLive: {
                 method:'GET'

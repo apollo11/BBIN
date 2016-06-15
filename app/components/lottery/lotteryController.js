@@ -5,12 +5,9 @@
 app.controller('LotteryGameController', ['$scope'
     , 'Lottery'
     , '$window'
-    , 'WEBSITE'
-    , 'UPPERNAME'
+    , 'BASE'
     , '$cookies'
-    , 'BASEURL_LOGIN'
-    , 'LOTTERY'
-    , function($scope, Lottery, $window, WEBSITE, UPPERNAME, $cookies, BASEURL_LOGIN, LOTTERY) {
+    , function($scope, Lottery, $window, BASE, $cookies) {
 
         $scope.title = 'Lottery Games';
         $scope.esdDate = moment();
@@ -27,13 +24,17 @@ app.controller('LotteryGameController', ['$scope'
         });
 
         $scope.connectGames = function (gameType) {
-            $scope.params.encrypt = md5(WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
-            $window.open(LOTTERY +'PlayGame?'
-                + 'website='   +WEBSITE
+            $scope.params.encrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
+            $window.open(BASE.LOTTERY +'PlayGame?'
+                + 'website='   +BASE.WEBSITE
                 + '&username=' +$scope.getCookie
                 + '&gametype=' +gameType
                 + '&key='      +'123456'+ $scope.params.encrypt + '123'
                 , 'Test Game', 'width=800, height=600');
         };
+
+        $scope.imageUri =function (uri) {
+            return _.replace(uri,'public://', '');
+        }
 
     }]);

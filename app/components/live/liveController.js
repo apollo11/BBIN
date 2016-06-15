@@ -5,10 +5,8 @@
 app.controller('LiveGamesController', ['$scope'
     , 'LiveGames'
     , '$window'
-    , 'WEBSITE'
-    , 'UPPERNAME'
     , '$cookies'
-    , 'BASEURL_LOGIN', function($scope, LiveGames, $window, WEBSITE, UPPERNAME, $cookies, BASEURL_LOGIN) {
+    , 'BASE', function($scope, LiveGames, $window, $cookies, BASE) {
 
          $scope.title = 'Live Games';
         $scope.esdDate = moment();
@@ -25,13 +23,16 @@ app.controller('LiveGamesController', ['$scope'
         });
 
         $scope.connectGames = function (gameType) {
-            $scope.params.encrypt = md5(WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
-            $window.open(BASEURL_LOGIN +'PlayGame?'
-                + 'website='   +WEBSITE
+            $scope.params.encrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
+            $window.open(BASE.LOGIN +'PlayGame?'
+                + 'website='   +BASE.WEBSITE
                 + '&username=' +$scope.getCookie
                 + '&gametype=' +gameType
                 + '&key='      +'123456'+ $scope.params.encrypt + '123'
                 , 'Test Game', 'width=800, height=600');
         };
 
+        $scope.imageUri =function (uri) {
+            return _.replace(uri,'public://', '');
+        }
 }]);

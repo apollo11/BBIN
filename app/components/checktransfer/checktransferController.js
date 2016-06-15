@@ -3,11 +3,12 @@
  */
 'use strict';
 app.controller('CheckTransferController',
-    ['$scope'
-        ,'CheckTransfer'
-        ,'WEBSITE'
-        ,'UPPERNAME'
-        ,'$cookies', function($scope, CheckTransfer, WEBSITE, UPPERNAME, $cookies) {
+    [
+          '$scope'
+        , 'CheckTransfer'
+        , 'BASE'
+        , '$cookies'
+        , function($scope, CheckTransfer, BASE, $cookies) {
     $scope.title = 'Check Transfer';
     $scope.esdDate = moment();
     $scope.today = moment().format('YYYYMMDD');
@@ -16,13 +17,13 @@ app.controller('CheckTransferController',
     $scope.params = {};
     $scope.keyB ='p8kSw';
     $scope.getCookie = $cookies.get('username');
-    $scope.encrypt = md5(WEBSITE + $scope.keyB + $scope.esdFormat);
+    $scope.encrypt = md5(BASE.WEBSITE + $scope.keyB + $scope.esdFormat);
     //$scope.encrypt = 'f8973262d4ab83fac813d7c2a6acae47';
 
     $scope.selectTransfer = function () {
 
         $scope.params = {
-            website: WEBSITE,
+            website: BASE.WEBSITE,
             key: '1234567'+ $scope.encrypt + '1',
             transid: $scope.transfer.transid
         };

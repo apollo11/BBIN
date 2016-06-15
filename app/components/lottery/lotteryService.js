@@ -3,8 +3,8 @@
  */
 
 'use strict';
-app.factory('Lottery',['$resource','CMS_URL', function($resource, CMS_URL) {
-    var ENDPOINT = $resource(CMS_URL + 'api/v1/lottery', {},
+app.factory('Lottery',['$resource','BASE', function($resource, BASE) {
+    var ENDPOINT = $resource(BASE.CMS + 'api/v1/lottery', {},
         {
             getLottery: {
                 method:'GET'

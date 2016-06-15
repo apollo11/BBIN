@@ -29,6 +29,10 @@ app.config(['$stateProvider'
                         controller:'FooterController',
                         templateUrl:'components/footer/footerView'
 
+                    },
+                    'menu': {
+                        controller:'MenuController',
+                        templateUrl:'components/menu/menuView.html'
                     }
                 }
             })

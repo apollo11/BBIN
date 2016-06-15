@@ -1,0 +1,20 @@
+.thumbnail-image {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 4px auto 0;
+  height: 160px; }
+
+nav {
+  line-height: 4; }
+
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    /* properties that only apply to tables */ } }
+/* min-with:481px and max-width:768px */
+@media (max-width: 480px) {
+  body {
+    /* properties that only applies phones */ } }
+/* max-width: 480px */
+
+/*# sourceMappingURL=style.css.map */

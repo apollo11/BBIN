@@ -1,7 +1,7 @@
 'use strict';
 
-app.factory('CheckBalance', ['$resource', 'BASEURL', function($resource, BASEURL) {
-    var ENDPOINT = $resource(BASEURL + 'CheckUsrBalance?website=:website&uppername=:uppername&key=:key&username=:username',{},
+app.factory('CheckBalance', ['$resource', 'BASE', function($resource, BASE) {
+    var ENDPOINT = $resource(BASE.URL + 'CheckUsrBalance?website=:website&uppername=:uppername&key=:key&username=:username',{},
         {
             getBalance: {
                 method:'GET'

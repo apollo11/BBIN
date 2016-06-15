@@ -3,11 +3,12 @@
  */
 'use strict';
 app.controller('BetRecordController',
-    ['$scope'
+    [
+        '$scope'
         ,'BetRecordService'
-        ,'WEBSITE'
-        ,'UPPERNAME'
-        ,'$cookies', function($scope, BetRecordService, WEBSITE, UPPERNAME, $cookies) {
+        ,'BASE'
+        ,'$cookies'
+        , function($scope, BetRecordService, BASE, $cookies) {
             $scope.title = 'BET Record';
             $scope.date = new Date();
             $scope.esdDate = moment();
@@ -15,11 +16,11 @@ app.controller('BetRecordController',
             $scope.dateFormat = moment.tz($scope.esdDate, "America/New_York").format('YYYY-MM-DD');
             $scope.keyB ='Yg8OJw7';
             $scope.getCookie = $cookies.get('username');
-            $scope.encrypt = md5(WEBSITE + $scope.getCookie +$scope.keyB + $scope.esdFormat);
+            $scope.encrypt = md5(BASE.WEBSITE + $scope.getCookie +$scope.keyB + $scope.esdFormat);
 
             $scope.params = {
-                 website: WEBSITE,
-                 uppername: UPPERNAME,
+                 website: BASE.WEBSITE,
+                 uppername: BASE.UPPERNAME,
                  key: '1234'+ $scope.encrypt +'1',
                  gamekind:5,
                  rounddate: $scope.dateFormat,

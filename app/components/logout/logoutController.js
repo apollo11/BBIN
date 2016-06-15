@@ -7,9 +7,8 @@ app.controller('LogoutController',
         , 'Logout'
         ,'$cookies'
         ,'$window'
-        ,'WEBSITE'
-        ,'UPPERNAME'
-        , function($scope, Logout, $cookies, $window, WEBSITE, UPPERNAME) {
+        ,'BASE'
+        , function($scope, Logout, $cookies, $window, BASE) {
 
             $scope.title = 'LogoutController';
             $scope.esdDate = moment();
@@ -21,9 +20,9 @@ app.controller('LogoutController',
 
             $scope.logoutAccount = function () {
                 $scope.keyB = '0xUtO';
-                $scope.encrypt = md5(WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
+                $scope.encrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
                 $scope.params = {
-                    website: WEBSITE,
+                    website: BASE.WEBSITE,
                     username: $scope.getCookie,
                     key:'123456'+ $scope.encrypt + '123'
                 };
@@ -38,6 +37,5 @@ app.controller('LogoutController',
                 })
 
             }
-
 
 }]);

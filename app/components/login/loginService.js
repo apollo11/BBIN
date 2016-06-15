@@ -1,7 +1,7 @@
 'use strict';
 
-app.factory('Login', ['$resource', 'BASEURL_LOGIN', function($resource, BASEURL_LOGIN) {
-    var ENDPOINT = $resource(BASEURL_LOGIN + 'Login2?username=:username&uppername=:uppername&key=:key&website=:website&password=:password',{},
+app.factory('Login', ['$resource', 'BASE', function($resource, BASE) {
+    var ENDPOINT = $resource(BASE.LOGIN + 'Login2?username=:username&uppername=:uppername&key=:key&website=:website&password=:password',{},
         {
             account: {
                 method: 'GET'
