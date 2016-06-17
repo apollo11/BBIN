@@ -32,13 +32,11 @@ app.controller('BBsportGamesController',
                 + '&username=' + $scope.getCookie
                 + '&gametype=' + gameType
                 + '&key='      +'123456'+ $scope.params.encrypt + '123'
+                + '&lang'      +'en-us'
                 , 'Test Game', 'width=800, height=600');
         };
 
         $scope.imageUri =function (uri) {
             return _.replace(uri,'public://', '');
         }
-
-
-
-}]);
+    }]);

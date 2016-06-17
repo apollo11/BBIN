@@ -24,11 +24,15 @@ app.controller('LiveGamesController', ['$scope'
 
         $scope.connectGames = function (gameType) {
             $scope.params.encrypt = md5(BASE.WEBSITE + $scope.getCookie + $scope.keyB + $scope.esdFormat);
+            $scope.params.gamekind = 3;
             $window.open(BASE.LOGIN +'PlayGame?'
-                + 'website='   +BASE.WEBSITE
-                + '&username=' +$scope.getCookie
-                + '&gametype=' +gameType
-                + '&key='      +'123456'+ $scope.params.encrypt + '123'
+                + 'website='   + BASE.WEBSITE
+                + '&username=' + $scope.getCookie
+                + '&gametype=' + gameType
+                + '&gamekind='  +  $scope.params.gamekind
+                + '&gamecode='  + 1
+                + '&key='      + '123456'+ $scope.params.encrypt + '123'
+                + '&lang='     + 'en-us'
                 , 'Test Game', 'width=800, height=600');
         };
 

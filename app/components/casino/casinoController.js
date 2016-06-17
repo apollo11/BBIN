@@ -32,6 +32,7 @@ app.controller('CasinoGamesController',
                     + '&username=' +$scope.getCookie
                     + '&gametype=' +gameType
                     + '&key='      +'123456'+ $scope.params.encrypt + '123'
+                    + '&lang'      +'en-us'
                     , 'Test Game', 'width=800, height=600');
             };
 

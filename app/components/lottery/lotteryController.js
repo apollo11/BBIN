@@ -30,6 +30,8 @@ app.controller('LotteryGameController', ['$scope'
                 + '&username=' +$scope.getCookie
                 + '&gametype=' +gameType
                 + '&key='      +'123456'+ $scope.params.encrypt + '123'
+                + 'lang=en-us'
+                + 'gamekind=3'
                 , 'Test Game', 'width=800, height=600');
         };
 
